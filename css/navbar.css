@@ -1,0 +1,64 @@
+/* style.css */
+:root {
+    --beige: #f5f5dc;
+    --brown: #8b4513;
+}
+
+.nav {
+    background: var(--beige);
+    padding: 1rem;
+    margin: 10px;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-list {
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: var(--beige);
+    z-index: 1000;
+    border-radius: 8px;
+    padding: 0;
+}
+
+.nav-item {
+    color: #333;
+    padding: 0.5rem 1rem;
+}
+
+.nav-item a {
+    color: var(--brown);
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.nav-item a:hover {
+    text-decoration: underline;
+}
+
+.menu-toggle {
+    display: block;
+    background: transparent;
+    border: none;
+    color: var(--brown);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .nav-list {
+        flex-direction: row;
+        display: flex;
+        position: static;
+        background: transparent;
+    }
+    .menu-toggle {
+        display: none;
+    }
+}

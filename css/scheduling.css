@@ -1,0 +1,94 @@
+/* styles.css */
+
+.container {
+    text-align: center;
+    padding: 40px;
+    background-color: #f5f5dc; /* Colore di sfondo beige */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: #d5006d; /* Colore del titolo rosa */
+}
+
+.paragraph {
+    font-size: 1.2rem;
+    color: #333; /* Colore del testo */
+    line-height: 1.6;
+}
+
+/* Timeline styles */
+.timeline {
+    position: relative;
+    padding: 20px 0;
+    margin: 40px 0;
+    border-left: 2px dashed #d5006d; /* Linea verticale tratteggiata */
+    margin-left: 20px;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 40px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-icon {
+    width: 20px;
+    height: 20px;
+    background-color: #d5006d; /* Colore del pallino */
+    border-radius: 50%;
+    position: absolute;
+    left: -32px; /* Posiziona il pallino rispetto alla linea */
+    top: 0;
+}
+
+.timeline-content {
+    text-align: left;
+}
+
+.timeline-content h2 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.timeline-content p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .timeline-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .timeline-content p {
+        font-size: 1rem;
+    }
+}
+
+/* Aggiungere un bordo per ogni item (il trattino tra i pallini) */
+.timeline-item:before {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: 20px;
+    bottom: -20px; /* Estende la linea fino al prossimo pallino */
+    width: 2px;
+    background-color: #d5006d;
+}
+
+/* Rimuovi il trattino per l'ultimo item */
+.timeline-item:last-child:before {
+    content: none;
+}

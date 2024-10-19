@@ -1,0 +1,47 @@
+/* styles.css */
+
+.container {
+    text-align: center;
+    padding: 40px;
+    background-color: #f0f0f0; /* Colore di sfondo */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: #333; /* Colore del titolo */
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 1.8rem;
+    color: #555; /* Colore del sottotitolo */
+    margin: 10px 0;
+}
+
+.paragraph {
+    font-size: 1.2rem;
+    color: #666; /* Colore del paragrafo */
+    line-height: 1.6;
+}
+
+.gifts-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.gift-item {
+    font-size: 1.2rem;
+    color: #333; /* Colore degli elementi della lista */
+    margin: 10px 0;
+}
+
+.iban {
+    font-size: 1.2rem;
+    color: #8B4513; /* Colore per l'IBAN */
+    font-weight: bold;
+}
