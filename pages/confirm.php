@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <form class="form" method="POST" action="">
       <input class="input" type="text" name="name" placeholder="Il tuo nome, o della tua famiglia"
         value="<?php echo htmlspecialchars($name); ?>" required />
-      <textarea class="textarea" name="message" placeholder="Messaggio personale (opzionale)"
+      <textarea class="textarea" name="message" placeholder="Messaggio personale (opzionale). Scrivi qui se hai qualche informazione da comunicarci. Ci farebbe anche piacere se ci dicessi se hai allergie o intolleranze alimentari."
         rows="4"><?php echo htmlspecialchars($message); ?></textarea>
       <button class="button" type="submit">Invia Conferma</button>
     </form>
