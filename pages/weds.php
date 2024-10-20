@@ -3,7 +3,7 @@ include __DIR__ . '/../couplesData.php';
 $currentWedsData = null;
 
 foreach ($couplesData as $couple) {
-    if ($couple['weds'] === 'giulia-e-filippos') {
+    if ($couple['weds'] === $slug) {
         $currentWedsData = $couple;
         break;
     }

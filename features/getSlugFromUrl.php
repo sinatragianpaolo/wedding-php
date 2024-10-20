@@ -12,6 +12,5 @@ function getSlugFromUrl(): ?string
     $slug = isset($parts[0]) ? $parts[0] : null;
 
     return $slug;
-
 }
 ?>

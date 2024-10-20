@@ -25,7 +25,8 @@
             ?>
             L'URL dovrebbe contenere i nomi degli sposi, eccoti un esempio:
             <strong><?= $base_url ?>/alice-e-bob</strong><br>
-            Se il problema persiste, contatta il supporto tecnico, scrivendo alla mail: g-s@example.com
+            Se il problema persiste, contatta il supporto tecnico, scrivendo alla mail: <br>
+            g-s@example.com
         </p>
         <div class="image-container">
             <img src="assets/images/404_funny.png" alt="Pagina non trovata" class="funny-image">

@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . '/features/helpers.php'; ?>
 <!DOCTYPE html>
 <html lang="it">
 
@@ -13,42 +14,58 @@
 <body>
 
   <?php
-  include __DIR__ . '/includes/navbar.php';
-  include __DIR__ . '/features/getCoupleData.php';
-
-
-  $page = $_GET['page'] ?? 'home';
-
-  echo "pages: $page";
-
-  echo "<br>";
-
-  echo "slug: $slug";
-
-  switch ($page) {
-    case 'weds':
-      include 'pages/weds.php';
-      break;
-    case 'location':
-      include 'pages/location.php';
-      break;
-    case 'scheduling':
-      include 'pages/scheduling.php';
-      break;
-    case 'gifts':
-      include 'pages/gifts.php';
-      break;
-    case 'confirm':
-      include 'pages/confirm.php';
-      break;
-    default:
-      include 'pages/home.php';
-      break;
-    case 'fun':
-      include 'pages/fun.php';
-      break;
-
+  $slug = getSlugFromUrl();
+  $slugCouple = false;
+  if ($slug = getSlugFromUrl()) {
+    $slugCouple = getSlugCouple($slug);
   }
+
+  $page = $_GET['page'] ?? 'notFound';
+
+
+  $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+  $host = $_SERVER['HTTP_HOST'];
+  $base_url = "$scheme://$host";
+
+
+  include __DIR__ . '/includes/navbar.php';
+  
+  if ($slug && $slugCouple) {
+    if ($page === 'notFound') { 
+      include 'pages/home.php';
+    } else {
+      switch ($page) {
+        case 'weds':
+          include 'pages/weds.php';
+          break;
+        case 'location':
+          include 'pages/location.php';
+          break;
+        case 'scheduling':
+          include 'pages/scheduling.php';
+          break;
+        case 'gifts':
+          include 'pages/gifts.php';
+          break;
+        case 'confirm':
+          include 'pages/confirm.php';
+          break;
+        case 'fun':
+          include 'pages/fun.php';
+          break;
+        case 'band':
+        case 'home':
+        case 'foto':
+        default:
+          include 'pages/home.php';
+          break;
+
+      }
+    }
+  } else {
+    redirectToNotFound();
+  }
+
   ?>
 
 </body>
