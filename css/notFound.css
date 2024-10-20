@@ -1,0 +1,142 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5; /* Grigio chiaro per un aspetto elegante */
+    color: #333;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.container {
+    max-width: 800px; /* Limita la larghezza massima della container */
+    width: 90%; /* Permette alla container di adattarsi a schermi più piccoli */
+    padding: 20px; /* Padding interno per il contenitore */
+    box-sizing: border-box; /* Include padding nel calcolo della larghezza */
+    background-color: #ffffff; /* Sfondo bianco per il contenuto */
+    border-radius: 10px; /* Arrotonda gli angoli del contenitore */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Ombra per dare profondità */
+    display: flex; /* Usa il flexbox per un migliore layout interno */
+    flex-direction: column; /* Orientamento verticale */
+    justify-content: center; /* Centra verticalmente il contenuto */
+    align-items: center; /* Centra orizzontalmente il contenuto */
+    min-height: 60vh; /* Imposta un'altezza minima per il contenitore */
+}
+
+h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+.message {
+    font-size: 1.2em;
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+.funny-image {
+    max-width: 100%; /* L'immagine si adatta al 100% della larghezza della container */
+    height: auto; /* Mantiene il rapporto di aspetto */
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+.btn-back {
+    text-decoration: none;
+    background-color: #fff; /* Bianco per eleganza */
+    color: #333; /* Testo scuro per contrasto */
+    padding: 15px 25px;
+    margin: 10px;
+    border-radius: 25px;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 1.1em;
+    width: 70%;
+    max-width: 300px; /* Limita la larghezza massima del pulsante */
+    display: inline-block; /* Assicura che il pulsante si comporti come un blocco */
+}
+
+.btn-back:hover {
+    background-color: #333; /* Scuro per hover */
+    color: #fff; /* Testo chiaro per contrasto */
+    transform: scale(1.05);
+}
+
+.emoji {
+    font-size: 2em;
+    margin-top: 30px;
+}
+
+/* Media query per dispositivi più piccoli */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .message {
+        font-size: 1em;
+    }
+
+    .btn-back {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .emoji {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+
+    .message {
+        font-size: 0.9em;
+    }
+
+    .funny-image {
+        max-width: 90%; /* L'immagine si adatta al 90% della larghezza della container */
+    }
+
+    .btn-back {
+        padding: 8px 15px;
+    }
+}
+
+
+
+.image-container {
+    position: relative;
+  }
+  
+  .error-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 8%);
+    font-size: 4em;
+    font-weight: bold;
+    pointer-events: none;
+    color: white;
+  }
