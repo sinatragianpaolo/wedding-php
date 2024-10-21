@@ -3,25 +3,21 @@ session_start();
 
 $requestUri = explode('?', $_SERVER['REQUEST_URI'], 2)[0];
 
-if($_SESSION['logged_in']===true){
+if ($_SESSION['logged_in'] === true) {
     header("Location: $requestUri?page=home");
     exit;
-
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Ottieni email e password dalla richiesta POST
     $email = $_POST['email'] ?? '';
     $password = $_POST['password'] ?? '';
 
-    // Validazione semplice (puoi estendere con query al database)
-    $correctEmail = "admin@example.com";
-    $correctPassword = "password"; // Usa hashing delle password in un'app reale
+    $user = getDataFromQuery("SELECT * FROM users WHERE email = :email LIMIT 1", ['email' => $email]) ?? [];
 
-    if ($email === $correctEmail && $password === $correctPassword) {
-        // Imposta la sessione per l'utente loggato
+    // Verify password
+    if ($user && password_verify($password, $user['password'])) {
+        // Set session
         $_SESSION['logged_in'] = true;
-       
         header("Location: $requestUri?page=backoffice");
         exit;
     } else {
@@ -35,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php if (!empty($error)) {
         echo "<p class='error'>$error</p>";
     } ?>
-    <form method="POST" action="<?="$requestUri?page=login"?>">
+    <form method="POST" action="<?= "$requestUri?page=login" ?>">
         <label for="email">Email:</label>
         <input type="email" name="email" id="email" required>
 
