@@ -29,9 +29,9 @@
 
 
   include __DIR__ . '/includes/navbar.php';
-  
+
   if ($slug && $slugCouple) {
-    if ($page === 'notFound') { 
+    if ($page === 'notFound') {
       include 'pages/home.php';
     } else {
       switch ($page) {
@@ -53,13 +53,21 @@
         case 'fun':
           include 'pages/fun.php';
           break;
+        case 'login':
+          include 'pages/login.php';
+          break;
+        case 'logout':
+          include 'pages/logout.php';
+          break;
+        case 'backoffice':
+          include 'pages/backoffice/backoffice.php';
+          break;
         case 'band':
         case 'home':
         case 'foto':
         default:
           include 'pages/home.php';
           break;
-
       }
     }
   } else {

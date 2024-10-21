@@ -16,6 +16,15 @@
         <li class="nav-item"><a href="?page=band">Band</a></li>
         <li class="nav-item"><a href="?page=fun">Divertiamoci</a></li>
         <li class="nav-item"><a href="?page=confirm">Conferma Presenza</a></li>
+
+        <?php
+        session_start();
+        if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true): ?>
+            <li class="nav-item"><a href="?page=login">Accedi al Backoffice</a></li>
+        <?php else: ?>
+            <li class="nav-item"><a href="?page=backoffice">Backoffice</a></li>
+        <?php endif; ?>
+
     </ul>
 </nav>
 
