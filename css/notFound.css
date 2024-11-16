@@ -11,18 +11,20 @@ body {
 }
 
 .container {
-    max-width: 800px; /* Limita la larghezza massima della container */
-    width: 90%; /* Permette alla container di adattarsi a schermi più piccoli */
-    padding: 20px; /* Padding interno per il contenitore */
-    box-sizing: border-box; /* Include padding nel calcolo della larghezza */
-    background-color: #ffffff; /* Sfondo bianco per il contenuto */
-    border-radius: 10px; /* Arrotonda gli angoli del contenitore */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Ombra per dare profondità */
-    display: flex; /* Usa il flexbox per un migliore layout interno */
-    flex-direction: column; /* Orientamento verticale */
-    justify-content: center; /* Centra verticalmente il contenuto */
-    align-items: center; /* Centra orizzontalmente il contenuto */
-    min-height: 60vh; /* Imposta un'altezza minima per il contenitore */
+    margin-top: 15px;
+    max-width: 800px;
+    width: 90%;
+    padding: 20px;
+    box-sizing: border-box; 
+    background-color: #ffffff; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    padding-top: 50px;
 }
 
 h1 {
@@ -116,7 +118,7 @@ h2 {
     }
 
     .funny-image {
-        max-width: 90%; /* L'immagine si adatta al 90% della larghezza della container */
+        max-width: 90%;
     }
 
     .btn-back {
@@ -124,19 +126,41 @@ h2 {
     }
 }
 
-
-
-.image-container {
+  .image-container {
     position: relative;
-  }
-  
-  .error-number {
+    width: 100%;
+    max-width: 500px;
+    overflow: hidden; /* Nasconde le parti delle immagini che escono dai bordi */
+    height: auto;
+    display: flex; /* Aggiunto per centrare orizzontalmente */
+    justify-content: center; /
+}
+
+.funny-image {
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0; /* Nasconde l'immagine per default */
+    transition: opacity 1s ease-in-out;
+}
+
+.img-1 {
+    animation: fadeInOut 10s infinite alternate; /* Animazione per img-1 */
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 8%);
-    font-size: 4em;
-    font-weight: bold;
-    pointer-events: none;
-    color: white;
-  }
+}
+
+.img-2 {
+    animation: fadeInOut 10s infinite alternate 5s; /* Ritardo di 3 secondi per img-2 */
+    position: relative;
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}

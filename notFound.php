@@ -30,8 +30,8 @@ $base_url = "$scheme://$host";
             g-s@example.com
         </p>
         <div class="image-container">
-            <img src="<?= $base_url ?>/assets/images/404_funny.png" alt="Pagina non trovata" class="funny-image img-1">
-            <img src="<?= $base_url ?>/assets/images/wedding_404.png" alt="Pagina non trovata" class="funny-image img-2">
+            <div><img src="<?= $base_url ?>/assets/images/404_funny.png" alt="Pagina non trovata" class="funny-image img-1"></div>
+            <div><img src="<?= $base_url ?>/assets/images/wedding_404.png" alt="Pagina non trovata" class="funny-image img-2"></div>
         </div>
     </div>
     <div class="buttons">
