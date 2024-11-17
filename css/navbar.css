@@ -32,11 +32,12 @@
     padding: 0.5rem 1rem;
 }
 
-.nav-item a {
+.nav-item a, .nav-item.backoffice {
     color: var(--brown);
     text-decoration: none;
     font-size: 1.2rem;
 }
+
 
 .nav-item a:hover {
     text-decoration: underline;

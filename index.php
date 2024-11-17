@@ -59,8 +59,8 @@
         case 'logout':
           include 'pages/logout.php';
           break;
-        case 'backoffice':
-          include 'pages/backoffice/backoffice.php';
+        case 'backoffice-home':
+          include 'pages/backoffice/index.php';
           break;
         case 'band':
         case 'home':

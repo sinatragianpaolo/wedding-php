@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($user && password_verify($password, $user['password'])) {
             // Set session
             $_SESSION['logged_in'] = true;
-            header("Location: $requestUri?page=backoffice");
+            header("Location: $requestUri?page=backoffice-home");
             exit;
         } else {
             $error = "Email o password errata!";

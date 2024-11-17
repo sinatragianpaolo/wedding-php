@@ -5,7 +5,10 @@
 </style>
 
 <nav class="nav">
-    <button class="menu-toggle" id="menu-toggle">☰ Giulia ♥💕❤ Filippo</button>
+    <?php
+    $wedsData = getCoupleData($slug);
+    ?>
+    <button class="menu-toggle" id="menu-toggle">☰ <?=str_replace(" e ", " ♥💕❤ ", $wedsData["couple_name"]);?></button>
     <ul class="nav-list" id="nav-list">
         <li class="nav-item"><a href="?page=home">Home</a></li>
         <li class="nav-item"><a href="?page=weds">Gli Sposi</a></li>
@@ -22,10 +25,18 @@
         if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true): ?>
             <li class="nav-item"><a href="?page=login">Accedi al Backoffice</a></li>
         <?php else: ?>
-            <li class="nav-item"><a href="?page=backoffice">Backoffice</a></li>
+            <li class="nav-item"><a href="?page=backoffice-home">Backoffice</a></li>
+            <li class="nav-item logout"><a href="?page=logout">Logout</a></li>
         <?php endif; ?>
-
     </ul>
+    <?php
+    if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
+        <ul class="nav-list backoffice" id="nav-list">
+        <li class="nav-item backoffice nav-backoffice-title">Backoffice menu ➤</li>
+        <li class="nav-item backoffice"><a href="?page=backoffice-home">Home</a></li>
+    </ul>
+    <?php endif; ?>
+
 </nav>
 
 <script>
