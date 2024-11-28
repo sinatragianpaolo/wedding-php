@@ -38,6 +38,29 @@
     font-size: 1.2rem;
 }
 
+.nav-item.backoffice, .nav-item.backoffice a {
+    background-color: #8b4513;
+    color: var(--beige);
+}
+
+.nav-item.backoffice:not(.nav-backoffice-title) {
+    border: solid 1px var(--beige);
+    border-radius: 8px;
+}
+.nav-item.backoffice {
+    margin: 5px;
+}
+.nav-item.backoffice a {
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    margin: 5px;
+}
+.nav-backoffice {
+    background-color: #8b4513;
+    color: var(--beige);
+    border-radius: 8px;
+    margin: 5px;
+}
 
 .nav-item a:hover {
     text-decoration: underline;

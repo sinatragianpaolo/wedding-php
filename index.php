@@ -62,6 +62,9 @@
         case 'backoffice-home':
           include 'pages/backoffice/index.php';
           break;
+        case 'backoffice-gallery':
+          include 'pages/backoffice/gallery.php';
+          break;
         case 'band':
         case 'home':
         case 'foto':

@@ -1,0 +1,50 @@
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card {
+    position: relative;
+    width: 150px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: #fff;
+}
+
+.gallery-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.delete-btn, .upload-btn {
+    background-color: #ff5555;
+    border: none;
+    padding: 10px 15px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.upload-btn {
+    background-color: #4CAF50;
+    margin-top: 20px;
+}
+
+.delete-btn:hover {
+    background-color: #ff3333;
+}
+
+.upload-btn:hover {
+    background-color: #45a049;
+}
+
+.max-message {
+    color: red;
+    font-weight: bold;
+}

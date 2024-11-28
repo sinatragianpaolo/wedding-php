@@ -8,7 +8,7 @@
     <?php
     $wedsData = getCoupleData($slug);
     ?>
-    <button class="menu-toggle" id="menu-toggle">☰ <?=str_replace(" e ", " ♥💕❤ ", $wedsData["couple_name"]);?></button>
+    <button class="menu-toggle" id="menu-toggle">☰ <?= str_replace(" e ", " ♥💕❤ ", $wedsData["couple_name"]); ?></button>
     <ul class="nav-list" id="nav-list">
         <li class="nav-item"><a href="?page=home">Home</a></li>
         <li class="nav-item"><a href="?page=weds">Gli Sposi</a></li>
@@ -29,15 +29,18 @@
             <li class="nav-item logout"><a href="?page=logout">Logout</a></li>
         <?php endif; ?>
     </ul>
-    <?php
-    if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
-        <ul class="nav-list backoffice" id="nav-list">
-        <li class="nav-item backoffice nav-backoffice-title">Backoffice menu ➤</li>
-        <li class="nav-item backoffice"><a href="?page=backoffice-home">Home</a></li>
-    </ul>
-    <?php endif; ?>
-
 </nav>
+<?php
+if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
+    <nav class="nav-backoffice">
+        <ul class="nav-list backoffice" id="nav-list">
+            <li class="nav-item backoffice nav-backoffice-title">Backoffice menu ➤</li>
+            <li class="nav-item backoffice"><a href="?page=backoffice-home">Home</a></li>
+            <li class="nav-item backoffice"><a href="?page=backoffice-gallery">Galleria</a></li>
+        </ul>
+    </nav>
+<?php endif; ?>
+
 
 <script>
     const menuToggle = document.getElementById('menu-toggle');
