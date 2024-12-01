@@ -12,10 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'] ?? '';
     $password = $_POST['password'] ?? '';
 
-    $user = getDataFromQuery("SELECT id, weds_id, password FROM users WHERE email = :email LIMIT 1", ['email' => $email]) ?? [];
-    
-
-
+    $users = getDataFromQuery("SELECT id, weds_id, password FROM users WHERE email = :email LIMIT 1", ['email' => $email]) ?? [];
+    $user = $users[0] ?? [];    
 
     if ($user["weds_id"] === $wedsData["id"]) {
         // Verify password
