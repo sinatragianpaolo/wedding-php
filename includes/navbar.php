@@ -37,6 +37,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
             <li class="nav-item backoffice nav-backoffice-title">Backoffice menu ➤</li>
             <li class="nav-item backoffice"><a href="?page=backoffice-home">Home</a></li>
             <li class="nav-item backoffice"><a href="?page=backoffice-gallery">Galleria</a></li>
+            <li class="nav-item backoffice"><a href="?page=backoffice-pages">Pagine</a></li>
         </ul>
     </nav>
 <?php endif; ?>
