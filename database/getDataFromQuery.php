@@ -22,8 +22,8 @@ function getDataFromQuery(string $query, array $params = [])
         // Esegui la query
         $stmt->execute();
 
-        // Ottieni i risultati
-        $res = $stmt->fetch(PDO::FETCH_ASSOC);
+        // Ottieni i risultati (tutte le righe)
+        $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     } catch (PDOException $e) {
         die("Connection failed: " . $e->getMessage());

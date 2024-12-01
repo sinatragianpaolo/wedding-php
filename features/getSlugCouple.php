@@ -12,6 +12,6 @@ function getSlugCouple(string|false $slug): false|string
     $couple = getDataFromQuery("SELECT slug FROM weds WHERE slug = :slug;", ['slug' => $slug]) ?? [];
 
     // Ritorna il valore se esiste, altrimenti false
-    return $couple['slug'] ?? false;
+    return $couple[0]['slug'] ?? false;
 }
 ?>
