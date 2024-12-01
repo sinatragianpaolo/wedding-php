@@ -13,11 +13,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'] ?? '';
 
     $user = getDataFromQuery("SELECT id, weds_id, password FROM users WHERE email = :email LIMIT 1", ['email' => $email]) ?? [];
-    $wedFromSlug = getDataFromQuery("SELECT id FROM weds WHERE slug = :slug LIMIT 1", ['slug' => $slugCouple]) ?? [];
+    
 
 
 
-    if ($user["weds_id"] === $wedFromSlug["id"]) {
+    if ($user["weds_id"] === $wedsData["id"]) {
         // Verify password
         if ($user && password_verify($password, $user['password'])) {
             // Set session
