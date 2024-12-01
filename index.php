@@ -30,6 +30,11 @@
 
   include __DIR__ . '/includes/navbar.php';
 
+
+  if (isset($_GET['action']) && $_GET['action'] === 'logout') {
+    logout();
+  }
+
   if ($slug && $slugCouple) {
     if ($page === 'notFound') {
       include 'pages/home.php';

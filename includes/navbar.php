@@ -26,7 +26,7 @@
             <li class="nav-item"><a href="?page=login">Accedi al Backoffice</a></li>
         <?php else: ?>
             <li class="nav-item"><a href="?page=backoffice-home">Backoffice</a></li>
-            <li class="nav-item logout"><a href="?page=logout">Logout</a></li>
+            <li class="nav-item logout"><a href="?action=logout">Logout</a></li>
         <?php endif; ?>
     </ul>
 </nav>
