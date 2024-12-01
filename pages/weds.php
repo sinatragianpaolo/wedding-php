@@ -10,15 +10,14 @@ foreach ($couplesData as $couple) {
 }
 ?>
 
-<style><?php include __DIR__ . '/../css/weds.css'; ?></style>
+<style>
+    <?php include __DIR__ . '/../css/weds.css'; ?>
+</style>
 
 <div class="container">
     <h1 class="title">Gli Sposi: <?php echo $currentWedsData['coupleName']; ?></h1>
 
-    <?php if (!empty($currentWedsData['img'])): ?>
-        <img src="<?php echo $currentWedsData['img']; ?>" alt="Foto di <?php echo $currentWedsData['coupleName']; ?>"
-            class="image">
-    <?php endif; ?>
+    <img src="../gallery/<?=$slug;?>/sposi.jpg" class="image">
 
     <h2 class="subtitle">Qualche info su di loro</h2>
     <p class="paragraph"><?php echo $currentWedsData['details']; ?></p>
